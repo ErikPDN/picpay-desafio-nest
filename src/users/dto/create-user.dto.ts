@@ -1,9 +1,11 @@
 import { IsEmail, IsString, MinLength, IsEnum } from 'class-validator';
 
-export enum UserType {
-  USER = 'user',
-  MERCHANT = 'merchant',
-}
+export const UserType = {
+  USER: 'user',
+  MERCHANT: 'merchant',
+} as const;
+
+export type UserType = (typeof UserType)[keyof typeof UserType];
 
 export class CreateUserDto {
   @IsString({ message: 'Full name must be a string' })
