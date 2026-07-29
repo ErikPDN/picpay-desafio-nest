@@ -21,3 +21,6 @@ export const walletsRelations = relations(wallets, ({ one }) => ({
     references: [users.id],
   }),
 }));
+
+export type Wallet = typeof wallets.$inferSelect;
+export type NewWallet = typeof wallets.$inferInsert;
