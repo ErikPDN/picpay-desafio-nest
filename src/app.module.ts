@@ -6,9 +6,10 @@ import { TransferService } from './transfer.service';
 import { TransferController } from './transfer.controller';
 import { UsersService } from './users.service';
 import { WalletService } from './wallet.service';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [UsersModule, WalletModule, TransferModule],
+  imports: [UsersModule, WalletModule, TransferModule, DatabaseModule],
   controllers: [TransferController],
   providers: [TransferService, UsersService, WalletService],
 })
