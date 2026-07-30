@@ -57,7 +57,7 @@ export class UsersService {
   }
 
   private toResponseDto(user: User): CreateUserResponseDto {
-    const { password: _password, ...rest } = user;
+    const { password, ...rest } = user;
     return rest;
   }
 }

@@ -52,6 +52,10 @@ export class WalletService {
     return updatedWallet;
   }
 
+  async lockByUserId(userId: number, executor: DbExecutor) {
+    return this.getWalletByUserId(userId, executor);
+  }
+
   private async getWalletByUserId(userId: number, executor: DbExecutor) {
     const [wallet] = await executor
       .select()
