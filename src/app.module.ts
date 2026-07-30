@@ -4,6 +4,7 @@ import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { WalletModule } from './wallet/wallet.module';
 import { WalletService } from './wallet/wallet.service';
+import { ExternalModule } from './external/external.module';
 
 @Module({
   imports: [
@@ -16,6 +17,8 @@ import { WalletService } from './wallet/wallet.service';
     DatabaseModule,
 
     WalletModule,
+
+    ExternalModule,
   ],
   controllers: [],
   providers: [WalletService],
